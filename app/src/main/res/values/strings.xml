@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Wallet</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_user_name">User name</string>
+    <string name="action_user_email">Email Id</string>
+    <string name="action_user_password">Account Password</string>
+    <string name="action_user_re_password">Re-enter Account Password</string>
+    <string name="action_user_wallet_password">Wallet Password</string>
+    <string name="action_user_re_wallet_password">Re-enter Wallet Password</string>
+    <string name="action_sign_up">Sign up</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main">Wallet</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_logout">Logout</string>
+
+
+    <string name="Timeout_Error">Please connect to a NETWORK and try again</string>
+    <string name="Auth_Error">Authenticating user failure</string>
+    <string name="Server_Error">Server Error</string>
+    <string name="Network_Error">Network Error</string>
+    <string name="Parse_Error">Parse Error</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_send_fragment">Hello send fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_home_fragment">Hello home fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_recharge_fragment">Hello recharge fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_receive_fragment">Hello receive fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

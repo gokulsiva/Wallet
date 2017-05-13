@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.techgig.wallet.SendFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+        <!-- Login progress -->
+        <ProgressBar
+            android:id="@+id/send_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+        <ScrollView
+            android:id="@+id/send_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/send_receiverId"
+                    android:hint="Enter receiver ID"
+                    android:maxLines="1"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/send_password"
+                    android:hint="Enter your wallet password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/send_amount"
+                    android:hint="Enter amount to be send"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/send_sendButton"
+                    android:text="send"/>
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+</FrameLayout>
