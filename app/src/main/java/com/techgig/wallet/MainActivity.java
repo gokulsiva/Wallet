@@ -86,9 +86,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
-            SessionManager sessionManager = new SessionManager(getApplicationContext());
-            sessionManager.logoutUser();
-            sessionManager.checkLogin();
+            logOut();
             return true;
         }
 
@@ -129,10 +127,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_logout) {
 
-            SessionManager sessionManager = new SessionManager(getApplicationContext());
-            sessionManager.logoutUser();
-            sessionManager.checkLogin();
-
+            logOut();
         }
 
         if (fragment != null) {
@@ -146,5 +141,15 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void logOut(){
+
+        OfflineTransactionDAO dao = new OfflineTransactionDAO(getApplicationContext());
+        dao.logout();
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
+        sessionManager.logoutUser();
+        sessionManager.checkLogin();
+
     }
 }

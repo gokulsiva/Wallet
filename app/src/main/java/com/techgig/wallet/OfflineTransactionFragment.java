@@ -40,6 +40,8 @@ public class OfflineTransactionFragment extends Fragment {
     private JSONObject jsonObject;
     private String transactionStatus;
 
+    private String resultString;
+
     public OfflineTransactionFragment() {
         // Required empty public constructor
     }
@@ -59,16 +61,20 @@ public class OfflineTransactionFragment extends Fragment {
         form = (View) v.findViewById(R.id.offlineTransaction_form);
         progress = (View) v.findViewById(R.id.offlineTransaction_progress);
         claimableBalance = (TextView) v.findViewById(R.id.offlineTransactionBalance);
+        offlineFragmentResult = (TextView) v.findViewById(R.id.offlineFragmentResult);
         claimButton = (Button) v.findViewById(R.id.offlineFragmentClaimButton);
 
         values = dao.getAllOfflineTransactions();
 
+        resultString = "";
         long claimBalance = 0;
         for(OfflineTransaction o : values){
             claimBalance+=o.getAmount();
+            resultString += o.toString()+"\n";
         }
 
         claimableBalance.setText(Long.toString(claimBalance));
+        offlineFragmentResult.setText(resultString);
 
 
         claimButton.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +143,7 @@ public class OfflineTransactionFragment extends Fragment {
                             SessionManager sessionManager = new SessionManager(getContext());
                             sessionManager.updatePreference(SessionManager.KEY_BALANCE, Long.toString(newBalance));
                             Log.v("newBalance", Long.toString(newBalance));
+                            dao.deleteOfflineTransaction(transaction);
 
                         } else {
                             Toast.makeText(getContext(), result, Toast.LENGTH_LONG).show();
@@ -151,6 +158,26 @@ public class OfflineTransactionFragment extends Fragment {
 
 
         }
+
+        long claimBalance = 0;
+        if(!(failed.size() > 0)){
+            Toast.makeText(getContext(), "All are claimed", Toast.LENGTH_LONG).show();
+            claimBalance = 0;
+            resultString = "";
+        } else {
+            resultString = "";
+            claimBalance = 0;
+            for(OfflineTransaction o : failed){
+                claimBalance+=o.getAmount();
+                resultString += o.toString()+"\n";
+            }
+
+        }
+
+        showProgress(false);
+        claimableBalance.setText(Long.toString(claimBalance));
+        offlineFragmentResult.setText(resultString);
+
 
     }
 

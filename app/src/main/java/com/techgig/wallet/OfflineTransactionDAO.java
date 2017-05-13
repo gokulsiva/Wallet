@@ -35,6 +35,18 @@ public class OfflineTransactionDAO {
         dbHelper.close();
     }
 
+    public void login() {
+        open();
+        database.execSQL(MySQLiteHelper.DATABASE_CREATE);
+        close();
+    }
+
+    public void logout() {
+        open();
+        database.execSQL("DROP TABLE IF EXISTS " + MySQLiteHelper.TABLE_COMMENTS);
+        close();
+    }
+
 
     public OfflineTransaction createOfflineTransaction(String senderId, String senderPassword, String receiverId, String amount){
 
