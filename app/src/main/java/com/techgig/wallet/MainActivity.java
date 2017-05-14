@@ -145,8 +145,6 @@ public class MainActivity extends AppCompatActivity
 
     private void logOut(){
 
-        OfflineTransactionDAO dao = new OfflineTransactionDAO(getApplicationContext());
-        dao.logout();
         SessionManager sessionManager = new SessionManager(getApplicationContext());
         sessionManager.logoutUser();
         sessionManager.checkLogin();

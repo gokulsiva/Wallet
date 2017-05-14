@@ -7,6 +7,7 @@ package com.techgig.wallet;
 public class OfflineTransaction {
 
     private long id;
+    private String userId;
     private String senderId;
     private String senderPassword;
     private String receiverId;
@@ -27,6 +28,15 @@ public class OfflineTransaction {
     public void setSenderId(String senderId) {
         this.senderId = senderId;
     }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
 
     public String getSenderPassword() {
         return senderPassword;

@@ -360,9 +360,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             SessionManager session = new SessionManager(getApplicationContext());
                             session.createLoginSession(name, email, userId, walletId, balance, walletPassword);
 
-                            OfflineTransactionDAO dao = new OfflineTransactionDAO(getApplicationContext());
-                            dao.login();
-
                             // Staring MainActivity
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(i);

@@ -135,7 +135,7 @@ public class ReceiverReceipt extends AppCompatActivity {
 
             dao = new OfflineTransactionDAO(getApplicationContext());
             dao.open();
-            OfflineTransaction transaction = dao.createOfflineTransaction(sender, hashedPassword, receiver, money);
+            OfflineTransaction transaction = dao.createOfflineTransaction(map.get(SessionManager.KEY_USERID), sender, hashedPassword, receiver, money);
             if(transaction.getId() != 0){
                 finalStatus.setText("Transaction successfully added to offline.");
             } else {

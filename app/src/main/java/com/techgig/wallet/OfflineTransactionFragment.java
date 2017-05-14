@@ -64,7 +64,9 @@ public class OfflineTransactionFragment extends Fragment {
         offlineFragmentResult = (TextView) v.findViewById(R.id.offlineFragmentResult);
         claimButton = (Button) v.findViewById(R.id.offlineFragmentClaimButton);
 
-        values = dao.getAllOfflineTransactions();
+        values = dao.getAllOfflineTransactions(new SessionManager(getContext()).getUserDetails().get(SessionManager.KEY_USERID));
+        Log.v("Values", values.toString());
+        Log.v("Values Count = ", Integer.toString(values.size()));
 
         resultString = "";
         long claimBalance = 0;

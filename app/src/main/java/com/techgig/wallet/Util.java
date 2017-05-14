@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Util {
 
-    public static final String BASE_URL = "http://"+"192.168.1.109"+":5000";
+    public static final String BASE_URL = "http://"+"192.168.43.114"+":5000";
 
     public static final String KEY_SENDER_ID = "senderId";
     public static final String KEY_SENDER_PASSWORD = "senderPassword";

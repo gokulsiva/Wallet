@@ -13,6 +13,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_COMMENTS = "offline_transactions";
     public static final String COLUMN_ID = "_id";
+    public static final String COLUMN_USERID = "userId";
     public static final String COLUMN_SENDERID = "senderId";
     public static final String COLUMN_SENDERPASSWORD = "senderPassword";
     public static final String COLUMN_RECEIVERID = "receiverId";
@@ -24,6 +25,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     // Database creation sql statement
     public static final String DATABASE_CREATE = "create table "
             + TABLE_COMMENTS + "( " + COLUMN_ID + " integer primary key autoincrement, "
+            + COLUMN_USERID + " text not null, "
             + COLUMN_SENDERID + " text not null, "
             + COLUMN_SENDERPASSWORD + " text not null, "
             + COLUMN_RECEIVERID + " text not null, "
